@@ -38,7 +38,7 @@
                   console.log(rsp.payload.first_resolved_at);
                   console.log(rsp.payload.subject);
                   var fra = new Date(rsp.payload.first_resolved_at);
-                  var ca  = hew Date(rsp.payload.created_at);
+                  var ca  = new Date(rsp.payload.created_at);
                   var ttr = new Date(fra - ca);
                   $("#ttr").html(ttr);
 
