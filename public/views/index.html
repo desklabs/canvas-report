@@ -45,7 +45,7 @@
                   var hDiff = hourDiff / 3600 / 1000; //in hours
                   var ttr = {};
                   ttr.hours = Math.floor(hDiff);
-                  ttr.minutes = minDiff - 60 * ttr.hours;
+                  ttr.minutes = Math.floor(minDiff - 60 * ttr.hours);
                   console.log(ttr);
                   $("#ttr").html(ttr.hours + ":" + ttr.minutes);
 
