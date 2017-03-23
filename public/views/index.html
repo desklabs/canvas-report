@@ -18,8 +18,10 @@
 </head>
 <body>
  <button id='refresh'><img src='http://downloadicons.net/sites/default/files/refresh-button-icon-83842.png' height="10px" width="10px"></button>
- <h2>Time to Resolution</h2>
+ <h2>Time to First Resolution</h2>
   <div id="ttr"></div>
+ <h2>Time to Resolution</h2>
+  <div id="resolved"></div>
     <script src="https://ajax.deskapi.com/libs/desk/canvas/1.0.0/desk-canvas-all.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
    <script>
@@ -52,7 +54,16 @@
                   console.log(ttr);
                   $("#ttr").html(ttr.hours + " hours " + ttr.minutes + " minutes");
 
-                  
+                  var ra = new Date(rsp.payload.resolved_at).getTime();
+                  var rhourDiff = ra - ca; //in ms
+                  var rsecDiff = rhourDiff / 1000; //in s
+                  var rminDiff = rhourDiff / 60 / 1000; //in minutes
+                  var rhDiff = rhourDiff / 3600 / 1000; //in hours
+                  var resolved = {};
+                  resolved.hours = Math.floor(rhDiff);
+                  resolved.minutes = Math.floor(rminDiff - 60 * resolved.hours);
+                  console.log(resolved);
+                  $("#resolved").html(resolved.hours + " hours " + resolved.minutes + " minutes");
                     }
                 })
                }
