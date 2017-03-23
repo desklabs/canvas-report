@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Create Article From Draft</title>
+  <title>Canvas Reporting</title>
   <style>
      #link { 
            border-color: #009DDC;
@@ -25,47 +25,22 @@
           if (data.status === 200) {
             var sr       = data.payload.response.split('.')[1]
               , ctx      = JSON.parse(Desk.canvas.decode(sr))
-              , url      = ctx.context.environment.case.url + '/replies/draft'
+              , url      = ctx.context.environment.case.url'
 
             $('button').click(function() {
               Desk.canvas.client.ajax(url, {
                 client: ctx.client,
                 method: 'GET',
                 success: function(rsp) {
-                  console.log(rsp);
+                  console.log(rsp.payload.first_resolved_at);
                   console.log(rsp.payload.subject);
 
-                  var body = {body: rsp.payload.body, subject: rsp.payload.subject,
-                  _links: {
-                    topic: {
-                      href: "/api/v2/topics/642669",
-                      class: "topic"
-                    }
-                  }};
-                  console.log(JSON.stringify(body));
                   
-                  url2 = ctx.client.instanceUrl + "/api/v2/articles"
-                  Desk.canvas.client.ajax(url2,
-                    {client : ctx.client,
-                      method: 'POST',
-                      data: JSON.stringify(body),
-                      success : function(data) {
-                        if (201 === data.status) {
-                          alert("Success");
-                          console.log(data.payload.id);
-                          window.open(ctx.client.instanceUrl + "/admin/content-management/articles/" + data.payload.id + "/edit", "_blank")
-                        } else {
-                         alert("post article failed");
-                         console.log(data);
-                         console.log(data.payload)
-                        }
-                      }
                     })
                 }
               })
-            })
-          }
-        })
+            }
+          })
       })
     
    </script>
