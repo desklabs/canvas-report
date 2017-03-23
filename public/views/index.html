@@ -2,21 +2,23 @@
 <head>
   <title>Canvas Reporting</title>
   <style>
-     #link { 
+     #refresh { 
            border-color: #009DDC;
-           font-size: 12px;
+           font-size: 7px;
            text-align: center;
            background: #009DDC !important;
            padding: 7px 14px !important;
            color: white;
-           width: 100%;
+           width: 10%;
            border-radius: 4px;
            box-shadow: 0 0 1px #fff;
            border: 1px solid #009DDC;}
   </style>
 </head>
 <body>
- <button id='link'>Create Article</button>
+ <button id='refresh'>Refresh</button>
+ <h2>TIme to Resolution</h2>
+  <div id="ttr"></div>
     <script src="https://ajax.deskapi.com/libs/desk/canvas/1.0.0/desk-canvas-all.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
    <script>
@@ -34,6 +36,7 @@
                 success: function(rsp) {
                   console.log(rsp.payload.first_resolved_at);
                   console.log(rsp.payload.subject);
+                  $("#ttr").html(rsp.payload.first_resolved_at);
 
                   
                     }
