@@ -37,7 +37,8 @@
                 success: function(rsp) {
                   console.log(rsp.payload.first_resolved_at);
                   console.log(rsp.payload.subject);
-                  $("#ttr").html(rsp.payload.first_resolved_at);
+                  var ttr = resp.payload.first_resolved_at - resp.payload.created_at;
+                  $("#ttr").html(ttr);
 
                   
                     }
