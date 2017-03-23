@@ -19,10 +19,10 @@ body {font-family:  'Source Sans Pro', sans-serif;}
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
 </head>
 <body>
- <h2>Time to First Resolution</h2>
-  <div id="ttr"></div>
- <h2>Time to Resolution</h2>
-  <div id="resolved"></div>
+ <div>Time to First Resolution</div>
+  <h3 id="ttr"></h3>
+ <div>Time to Resolution</div>
+  <h3 id="resolved"></h3>
  <button id='refresh'>Refresh</button>
 
     <script src="https://ajax.deskapi.com/libs/desk/canvas/1.0.0/desk-canvas-all.js"></script>
@@ -55,8 +55,9 @@ body {font-family:  'Source Sans Pro', sans-serif;}
                   ttr.hours = Math.floor(hDiff);
                   ttr.minutes = Math.floor(minDiff - 60 * ttr.hours);
                   console.log(ttr);
-                  $("#ttr").html(ttr.hours + " hours " + ttr.minutes + " minutes");
-
+                  if (fra > 0) {
+                  $("#ttr").html(ttr.hours + " hours " + ttr.minutes + " minutes")
+		  } else {$("#ttr").html("N/A")};
                   var ra = new Date(rsp.payload.resolved_at).getTime();
                   var rhourDiff = ra - ca; //in ms
                   var rsecDiff = rhourDiff / 1000; //in s
@@ -66,7 +67,9 @@ body {font-family:  'Source Sans Pro', sans-serif;}
                   resolved.hours = Math.floor(rhDiff);
                   resolved.minutes = Math.floor(rminDiff - 60 * resolved.hours);
                   console.log(resolved);
+                  if (fra > 0) {
                   $("#resolved").html(resolved.hours + " hours " + resolved.minutes + " minutes");
+                  } else {$("#resolved").html("N/A")};
                     }
                 })
                }
