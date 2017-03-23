@@ -30,7 +30,10 @@
               , ctx      = JSON.parse(Desk.canvas.decode(sr))
               , url      = ctx.context.environment.case.url
 
-            $('button').click(function() {
+            $('button').click(get_stats);
+            $(document).ready(get_stats);
+
+            function get_stats() {
               Desk.canvas.client.ajax(url, {
                 client: ctx.client,
                 method: 'GET',
@@ -47,12 +50,12 @@
                   ttr.hours = Math.floor(hDiff);
                   ttr.minutes = Math.floor(minDiff - 60 * ttr.hours);
                   console.log(ttr);
-                  $("#ttr").html(ttr.hours + ":" + ttr.minutes);
+                  $("#ttr").html(ttr.hours + " hours " + ttr.minutes + " minutes");
 
                   
                     }
                 })
-              })
+               }
             }
           })
       })
