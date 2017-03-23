@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  var shared = "75d6a2f13b4c217910a96bae2dc4d2889870c6a8";
+  var shared = "98df1d172c4b8f4596b6a515e303cd74313db5f0";
   var signed_req = req.body.signed_request;
   // split request at '.'
   var hashedContext = signed_req.split('.')[0];
