@@ -15,9 +15,11 @@ Now that you have the application on Heroku, go ahead and create the integration
 
 3. Select 'Canvas iFrame' from the **Open Location** dropdown.
 
-4. Toggle the **Enabled** button to 'Yes' and select the [Permission level](https://support.desk.com/customer/portal/articles/1146981?b_id=7112&t=568640).
+4. In the **URL** field, add the URL of your heroku application.
 
-5. Click the **Update** button.
+5. Toggle the **Enabled** button to 'Yes' and select the [Permission level](https://support.desk.com/customer/portal/articles/1146981?b_id=7112&t=568640).
+
+6. Click the **Update** button.
 
 ## III. Add it to your Case Layout
 Now display the canvas application on your Case Layout.
@@ -31,6 +33,6 @@ Now display the canvas application on your Case Layout.
 4. Scroll over the left side of the 'Canvas Report' bar and click on the gear to open the **Edit** window. Adjust the pixel **Height** to **220** and **Position**, the order in which it appears in Case Details on the dashboard. Click **Save**.
 
 ## IV. Dashboard Confirmation
-After you have added the canvas application to your layout and selected users, open a ticket and you should see the Time Tracker under **Case Details**.
+After you have added the canvas application to your layout and selected users, open a ticket and you should see the Canvas Report under **Case Details**.
 
 
