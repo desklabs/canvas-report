@@ -58,6 +58,7 @@ body {font-family:  'Source Sans Pro', sans-serif;}
                   if (fra > 0) {
                   $("#ttr").html(ttr.hours + " hours " + ttr.minutes + " minutes")
 		  } else {$("#ttr").html("N/A")};
+                  
                   var ra = new Date(rsp.payload.resolved_at).getTime();
                   var rhourDiff = ra - ca; //in ms
                   var rsecDiff = rhourDiff / 1000; //in s
@@ -70,6 +71,7 @@ body {font-family:  'Source Sans Pro', sans-serif;}
                   if (fra > 0) {
                   $("#resolved").html(resolved.hours + " hours " + resolved.minutes + " minutes");
                   } else {$("#resolved").html("N/A")};
+ 
                     }
                 })
                }

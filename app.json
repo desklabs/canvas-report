@@ -1,0 +1,16 @@
+{
+"name": "Canvas Case Metrics",
+"description": "A Desk.com canvas app that allows you to view resolution times in real time within a case.",
+"keywords": [
+"productivity",
+"service",
+"canvas",
+"metric",
+"case",
+"resolution"
+],
+"website": "https://github.com/desklabs/canvas-report",
+"repository": "https://github.com/desklabs/canvas-report.git",
+"logo": "http://webassets.desk.com/resources/images/icons/favicon-apple-114x114.png?v=3.5",
+"success_url": "https://login.desk.com"
+}
